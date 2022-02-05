@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                     style: TextStyle(color: Colors.white, fontSize: 50),
                   ),
                   SizedBox(height: 15,),
-                  Text("Learn basic concepts OOP with Nahin",
+                  Text("Learn Object Oriented Programming with Nahin",
                     style: TextStyle(color: Colors.white.withOpacity(.7), height: 1.4, fontSize: 20),),
                   SizedBox(height: 180,),
                   AnimatedBuilder(
