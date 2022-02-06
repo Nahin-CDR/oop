@@ -13,6 +13,7 @@ class SecondPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         body: Column(
           children: [
             Container(
@@ -20,6 +21,7 @@ class SecondPage extends StatelessWidget {
                 child: Image.asset('assets/images/bg.png')
             ),
             Flexible(
+
               child: MyTopics(),
             )
           ],
@@ -36,7 +38,7 @@ class MyTopics extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+
       body: ListView(
         children: [
           ListTile(

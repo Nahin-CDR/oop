@@ -15,6 +15,11 @@ class Dart_OOP extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Dart OOP"),
+        flexibleSpace: Image(
+          image: AssetImage('assets/images/bg.png'),
+          fit: BoxFit.cover,
+        ),
+        backgroundColor: Colors.transparent,
       ),
       body: Container(
         child: ListView(
