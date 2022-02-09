@@ -1,11 +1,16 @@
 
-import 'dart:async';
 
+
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_offline/flutter_offline.dart';
+import 'package:oop/custom_error/no_internet.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 bool isLoading = true;
 
-class ClassInDart extends StatelessWidget {
+class PolymorphismInDart extends StatelessWidget {
+  const PolymorphismInDart({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +19,41 @@ class ClassInDart extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Whats is Class ?"),
-        flexibleSpace: Image(
+        iconTheme: const IconThemeData(
+            color:Colors.black54 //change your color here
+        ),
+        title: const Text("Polymorphism",style: TextStyle(
+            color:Colors.black54
+        ),),
+        flexibleSpace: const Image(
           image: AssetImage('assets/images/bg.png'),
           fit: BoxFit.cover,
         ),
         backgroundColor: Colors.transparent,
       ),
-      body: Home(),
+      body:  Builder(
+        builder: (BuildContext context) {
+          return OfflineBuilder(connectivityBuilder: (BuildContext context,ConnectivityResult connectivity, Widget child) {
+            final bool connected = (connectivity != ConnectivityResult.none); //true or false
+            return Stack(
+              fit: StackFit.expand,
+              children: [
+                child,
+                Positioned(
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 100),
+                      child: connected ?const Home():NoInternet(),
+                    )
+                ),
+              ],
+            );
+          },
+            child: const Center(
+              child: Text("Loading..."),
+            ),
+          );
+        },
+      ),
     );
   }
 }
@@ -57,13 +89,13 @@ class _HomeState extends State<Home> {
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.all(20),
+          //margin: EdgeInsets.all(0),
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
-          child: WebView(
+          child:  WebView(
             gestureNavigationEnabled: true,
             javascriptMode: JavascriptMode.unrestricted,
-            initialUrl: 'https://shebaabd24.blogspot.com/2022/02/blog-post.html',
+            initialUrl: 'https://shebaabd24.blogspot.com/2022/02/polymorphism-in-dart.html',
             onPageFinished: (finish){
               setState(() {
                 isLoading = false;
@@ -74,7 +106,7 @@ class _HomeState extends State<Home> {
             }),
           ),
         ),
-        isLoading ? LinearProgressIndicator(color: Colors.blueGrey,):Stack(),
+        isLoading ? const LinearProgressIndicator(color: Colors.blueGrey,):Stack(),
       ],
     );
   }

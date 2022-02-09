@@ -1,15 +1,17 @@
 
+
+
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_offline/flutter_offline.dart';
 import 'package:oop/custom_error/no_internet.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-
 bool isLoading = true;
 
-class InheritanceInDart extends StatelessWidget {
+class EncapsulationInDart extends StatelessWidget {
+  const EncapsulationInDart({Key? key}) : super(key: key);
 
-  const InheritanceInDart({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +23,8 @@ class InheritanceInDart extends StatelessWidget {
         iconTheme: const IconThemeData(
             color:Colors.black54 //change your color here
         ),
-        title: const Text("Inheritance ",style: TextStyle(
-            color: Colors.black54
+        title: const Text("Encapsulation",style: TextStyle(
+            color:Colors.black54
         ),),
         flexibleSpace: const Image(
           image: AssetImage('assets/images/bg.png'),
@@ -94,7 +96,7 @@ class _HomeState extends State<Home> {
           child:  WebView(
             gestureNavigationEnabled: true,
             javascriptMode: JavascriptMode.unrestricted,
-            initialUrl: 'https://shebaabd24.blogspot.com/2022/02/inheritance-in-dart.html',
+            initialUrl: 'https://shebaabd24.blogspot.com/2022/02/encapsulation-in-dart.html',
             onPageFinished: (finish){
               setState(() {
                 isLoading = false;

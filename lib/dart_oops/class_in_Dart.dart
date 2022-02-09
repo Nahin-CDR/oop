@@ -2,14 +2,11 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_offline/flutter_offline.dart';
-import 'package:oop/custom_error/no_internet.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-
+import '../custom_error/no_internet.dart';
 bool isLoading = true;
 
-class InheritanceInDart extends StatelessWidget {
-
-  const InheritanceInDart({Key? key}) : super(key: key);
+class ClassInDart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +16,15 @@ class InheritanceInDart extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(
-            color:Colors.black54 //change your color here
+          color:Colors.black54 //change your color here
         ),
-        title: const Text("Inheritance ",style: TextStyle(
-            color: Colors.black54
+        title: const Text("Class ",style: TextStyle(
+          color: Colors.black54
         ),),
         flexibleSpace: const Image(
           image: AssetImage('assets/images/bg.png'),
           fit: BoxFit.cover,
+
         ),
         backgroundColor: Colors.transparent,
       ),
@@ -39,8 +37,11 @@ class InheritanceInDart extends StatelessWidget {
               children: [
                 child,
                 Positioned(
+
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 100),
+                      //color: connected ? Color(0xFF00EE44) : Color(0xFFEE4400),
+                      //child: connected?Text("connected"):Text("disconnected"),
                       child: connected ?const Home():NoInternet(),
                     )
                 ),
@@ -94,7 +95,7 @@ class _HomeState extends State<Home> {
           child:  WebView(
             gestureNavigationEnabled: true,
             javascriptMode: JavascriptMode.unrestricted,
-            initialUrl: 'https://shebaabd24.blogspot.com/2022/02/inheritance-in-dart.html',
+            initialUrl: 'https://shebaabd24.blogspot.com/2022/02/blog-post.html',
             onPageFinished: (finish){
               setState(() {
                 isLoading = false;
@@ -105,7 +106,7 @@ class _HomeState extends State<Home> {
             }),
           ),
         ),
-        isLoading ? const LinearProgressIndicator(color: Colors.blueGrey,):Stack(),
+        isLoading ? LinearProgressIndicator(color: Colors.blueGrey,):Stack(),
       ],
     );
   }
