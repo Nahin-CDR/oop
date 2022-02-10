@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
 
     _scaleController = AnimationController(
         vsync: this,
-        duration: Duration(milliseconds: 300)
+        duration: const Duration(milliseconds: 300)
     );
 
     _scaleAnimation = Tween<double>(
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
 
     _scale2Controller = AnimationController(
         vsync: this,
-        duration: Duration(milliseconds: 300)
+        duration: const Duration(milliseconds: 300)
     );
 
     _scale2Animation = Tween<double>(
@@ -154,7 +154,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
               child:  Container(
                 width: width,
                 height: 400,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage('assets/images/one.png'),
                         fit: BoxFit.cover
@@ -168,13 +168,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("Welcome",
+                  const Text("Welcome",
                     style: TextStyle(color: Colors.white, fontSize: 50),
                   ),
-                  SizedBox(height: 15,),
+                  const SizedBox(height: 15,),
                   Text("Learn Object Oriented Programming with Nahin",
                     style: TextStyle(color: Colors.white.withOpacity(.7), height: 1.4, fontSize: 20),),
-                  SizedBox(height: 180,),
+                  const SizedBox(height: 180,),
                   AnimatedBuilder(
                     animation: _scaleController,
                     builder: (context, child) => Transform.scale(
@@ -192,8 +192,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                               ),
                               child: InkWell(
                                 onTap: () {
-                                  _scaleController.forward();
-                                },
+                                  _scaleController.forward();},
+
                                 child: Stack(
                                     children: <Widget> [
                                       AnimatedBuilder(
@@ -207,19 +207,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                                                 child: Container(
                                                   width: 60,
                                                   height: 60,
-                                                  decoration: BoxDecoration(
+                                                  decoration: const BoxDecoration(
                                                       shape: BoxShape.circle,
                                                       color: Colors.blue
                                                   ),
-                                                  child: hideIcon == false ? Icon(Icons.arrow_forward, color: Colors.white,) : Container(),
+                                                  child: hideIcon == false ?
+                                                  const Icon(Icons.arrow_forward, color: Colors.white,) : Container(),
                                                 )
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ]
+
+                                    ],
+
                                 ),
                               ),
+
                             ),
                           ),
                         )),

@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:oop/cplusplus_oop.dart';
 import 'package:oop/dart_oop.dart';
 import 'package:oop/dart_oops/inheritance.dart';
 
@@ -67,10 +68,10 @@ class MyTopics extends StatelessWidget{
             subtitle: Text("Implementation of OOP in C++",style: TextStyle(color: Colors.black)),
 
             /* navigate to next page starts */
-            // onTap: (){
-            //   var route = MaterialPageRoute(builder: (context) => HomePage());
-            //   Navigator.push(context, route);
-            // },
+            onTap: (){
+              var route = MaterialPageRoute(builder: (context) => const CPlusPlus_OOP());
+              Navigator.push(context, route);
+            },
             /* navigate to next page ends */
           ),
         ],

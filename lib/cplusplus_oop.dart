@@ -3,6 +3,13 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:oop/cplusplus_oop/abstraction_in_cplusplus.dart';
+import 'package:oop/cplusplus_oop/class_in_c.dart';
+import 'package:oop/cplusplus_oop/constructor_in_c.dart';
+import 'package:oop/cplusplus_oop/encapslation_in_c.dart';
+import 'package:oop/cplusplus_oop/inheritance_in_c.dart';
+import 'package:oop/cplusplus_oop/object_in_c.dart';
+import 'package:oop/cplusplus_oop/polimorphism_in_c.dart';
 import 'package:oop/dart_oops/abstraction_in_Dart.dart';
 import 'package:oop/dart_oops/class_in_Dart.dart';
 import 'package:oop/dart_oops/constructor_in_Dart.dart';
@@ -13,8 +20,8 @@ import 'package:oop/dart_oops/polimorphism_in_Dart.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 
-class Dart_OOP extends StatelessWidget {
-  const Dart_OOP({Key? key}) : super(key: key);
+class CPlusPlus_OOP extends StatelessWidget {
+  const CPlusPlus_OOP({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +30,7 @@ class Dart_OOP extends StatelessWidget {
         iconTheme: const IconThemeData(
             color:Colors.black54 //change your color here
         ),
-        title: const Text("Dart OOP",style: TextStyle(
+        title: const Text("C++ OOP",style: TextStyle(
             color: Colors.black54
         ),),
         flexibleSpace: const Image(
@@ -40,14 +47,14 @@ class Dart_OOP extends StatelessWidget {
               title: const Text("What is class ?"),
               subtitle: const Text("Learn Concept of a class"),
               onTap: (){
-                Navigator.push(context,MaterialPageRoute(builder:(context)=>ClassInDart()));
+                Navigator.push(context,MaterialPageRoute(builder:(context)=>const ClassInC()));
               }),
           ListTile(
               leading: Image.asset('assets/images/num2.png'),
               title: const Text("What is object ?"),
               subtitle: const Text("Learn Concept of an object"),
               onTap: (){
-                var route = MaterialPageRoute(builder: (context) => ObjectInDart(),);
+                var route = MaterialPageRoute(builder: (context) => const ObjectInC(),);
                 Navigator.push(context, route);
               }),
           ListTile(
@@ -55,7 +62,7 @@ class Dart_OOP extends StatelessWidget {
               title: const Text("What is Inheritance ?"),
               subtitle: const Text("Learn Concept of inheritance "),
               onTap: (){
-                var route = MaterialPageRoute(builder: (context) => const InheritanceInDart(),);
+                var route = MaterialPageRoute(builder: (context) => const InheritanceInC(),);
                 Navigator.push(context, route);
               }),
           ListTile(
@@ -63,7 +70,7 @@ class Dart_OOP extends StatelessWidget {
               title: const Text("What is Abstraction ?"),
               subtitle: const Text("Learn Concept of abstraction"),
               onTap: (){
-                var route = MaterialPageRoute(builder: (context) => const AbstractionInDart(),);
+                var route = MaterialPageRoute(builder: (context) => const AbstractionInC(),);
                 Navigator.push(context, route);
               }),
           ListTile(
@@ -71,7 +78,7 @@ class Dart_OOP extends StatelessWidget {
               title: const Text("What is Polymorphism ?"),
               subtitle: const Text("Learn Concept of polymorphism"),
               onTap: (){
-                var route = MaterialPageRoute(builder: (context) => const PolymorphismInDart(),);
+                var route = MaterialPageRoute(builder: (context) => const PolymorphismInC(),);
                 Navigator.push(context, route);
               }),
           ListTile(
@@ -79,7 +86,7 @@ class Dart_OOP extends StatelessWidget {
               title: const Text("What is Encapsulation ?"),
               subtitle: const Text("Learn Concept of encapsulation"),
               onTap: (){
-                var route = MaterialPageRoute(builder: (context) => const EncapsulationInDart(),);
+                var route = MaterialPageRoute(builder: (context) => const EncapsulationInC(),);
                 Navigator.push(context, route);
               }),
           ListTile(
@@ -87,7 +94,7 @@ class Dart_OOP extends StatelessWidget {
               title: const Text("What is Constructor ?"),
               subtitle: const Text("Learn Concept of constructor"),
               onTap: (){
-                var route = MaterialPageRoute(builder: (context) => ConstructorInDart(),);
+                var route = MaterialPageRoute(builder: (context) => const ConstructorInC(),);
                 Navigator.push(context, route);
               }),
 

@@ -69,6 +69,15 @@ flutter:
     - assets/images/bg.png
     - assets/images/dart_icon.jpg
     - assets/images/no_signal.png
+    - assets/images/num1.png
+    - assets/images/num2.png
+    - assets/images/num3.png
+    - assets/images/num4.png
+    - assets/images/num5.png
+    - assets/images/num6.png
+    - assets/images/num7.png
+    - assets/images/num8.png
+    - assets/images/num9.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
